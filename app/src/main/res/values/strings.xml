@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">应用分析</string>
+
+    <string name="txt_start">开始</string>
+    <string name="txt_stop">停止</string>
+    <string name="txt_privacy_lock_permission">使用程序锁,需要允许查看使用的权限,是否打开？</string>
+    <string name="hello_blank_fragment">hello_blank_fragment</string>
+
+</resources>
