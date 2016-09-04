@@ -3,6 +3,7 @@ package com.china.ds.appanalysis;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
+import com.china.ds.appanalysis.service.TopActivityListener;
 import com.china.ds.appanalysis.util.PackageManagerUtil;
 
 /**
@@ -13,9 +14,6 @@ public class TopActivityMonitor extends Thread {
     private Context context;
     private TopActivityListener listener;
     boolean isCancel = false;
-    public interface TopActivityListener{
-        void updateTopActivity(String packagename);
-    }
 
     public TopActivityMonitor(Context context, TopActivityListener listener){
         this.context = context;

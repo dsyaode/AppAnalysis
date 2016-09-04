@@ -6,13 +6,13 @@ import android.app.AppOpsManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.china.ds.appanalysis.R;
 import com.china.ds.appanalysis.fragment.AppItemFragment;
-import com.china.ds.appanalysis.fragment.AppsFragment;
 import com.china.ds.appanalysis.fragment.MainFragment;
 import com.china.ds.appanalysis.fragment.TotalItemFragment;
 import com.china.ds.appanalysis.service.MonitorService;
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
     public void initData(){
-        this.startService(new Intent(this, MonitorService.class));
+//        MonitorService.startService(MainActivity.this);
     }
 
     @Override
@@ -155,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             public void onClick(DialogInterface dialogInterface, int i) {
                 hasOpen = false;
                 MainActivity.this.finish();
+                MonitorService.stopService(MainActivity.this);
             }
         });
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
